@@ -1,62 +1,94 @@
+//inserimento nome 
+let firstName; 
 do{
-    let name = prompt("qual è il tuo nome?");
-}while(name === null);
+    firstName = prompt("inserisci il tuo nome:");
+}while (firstName === null || firstName.trim() === "");
 
+//variabile che mantiene il punteggio
 let score = 0;
 
-let d1 = prompt("qual è la capitale di italia?");
+//domande, assegnazione punteggio e sanitize variabile
+//prima domanda
+let d1;
+do{
+    d1 = prompt("qual è la capitale di italia?");
+}while (d1 === null || d1.trim() === "");
 d1 = d1.toLowerCase().trim();
 if(d1 === "roma")
     score++;
 else
-    prompt("errato, la risposta giusta è Roma");
+    alert("errato, la risposta giusta è Roma");
 
-let d2 = prompt("di che colore è la fragola?");
+//seconda domanda
+let d2;
+do{
+    d2 = prompt("di che colore è la fragola?");
+}while (d2 === null || d2.trim() === "");
 d2 = d2.toLowerCase().trim();
-if(d2 === "rosso")
+if(d2 === "rossa")
     score++;
 else
-    prompt("errato, la risposta giusta è Rosso");
+    alert("errato, la risposta giusta è Rossa");
 
-
-let d3 = prompt("quante ruote ha una macchina?");
+//terza domanda
+let d3; 
+do{
+    d3 = prompt("quante ruote ha una macchina?");
+}while (d3 === null || d3.trim() === "");
 d3 = d3.toLowerCase().trim();
 if(d3 === "4")
     score++;
 else
-    prompt("errato, la risposta giusta è 4");
+    alert("errato, la risposta giusta è 4");
 
-
-let d4 = prompt("come si dice ciao in inglese");
+//quarta domanda
+let d4; 
+do{
+    d4 = prompt("come si dice ciao in inglese");
+}while (d4 === null || d4.trim() === "");
 d4 = d4.toLowerCase().trim();
 if(d4 === "hello")
     score++;
 else
-    prompt("errato, la risposta giusta è Hello");
+    alert("errato, la risposta giusta è Hello");
 
-let d5 = prompt("quando è scoppiata la prima guerra mondiale? (nel mondo non in italia)");
+//quinta domanda
+let d5;
+do{
+    d5  = prompt("quando è scoppiata la prima guerra mondiale? (nel mondo non in italia)");
+}while (d5 === null || d5.trim() === "");
 d5 = d5.toLowerCase().trim();
 if(d5 === "1914")
     score++;
 else
-    prompt("errato, la risposta giusta è 1914");
+    alert("errato, la risposta giusta è 1914");
 
-let d6 = prompt("come si chiama il fiore che si gira al sole?");
+//sesta domanda
+let d6; 
+do{
+    d6 = prompt("come si chiama il fiore che si gira al sole?");
+}while (d6 === null || d6.trim() === "");
 d6 = d6.toLowerCase().trim();
 if(d6 === "girasole")
     score++;
 else
-    prompt("errato, la risposta giusta è Girasole");
+    alert("errato, la risposta giusta è Girasole");
 
-let d7 = prompt("dove abita francesco francabandera (basta solo la prima parola della città)");
+//settima domanda
+let d7; 
+do{
+    d7 = prompt("dove abita francesco francabandera (basta solo la prima parola della città)");
+}while (d7 === null || d7.trim() === "");
 d7 = d7.toLowerCase().trim();
-if(d1 === "palo")
+if(d7 === "palo")
     score++;
 else
-    prompt("errato, la risposta giusta è Palo (ci dispiace per lui)");
+    alert("errato, la risposta giusta è Palo (ci dispiace per lui)");
 
+//stampa punteggio finale
 alert("il tuo punteggio finale: " +score);
 
+//calcolo e stampa in console della percentuale
 let percentuale = (100 * score)/7;
 
 console.log("percentuale risposte giuste: " + percentuale);
