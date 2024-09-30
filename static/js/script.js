@@ -1,3 +1,13 @@
+//funzione per il sanitize
+function sanitize(stringa) {
+    return stringa.toLowerCase().trim();
+}
+
+//funzione per il calcolo percentuale
+function calcolaPercentuale(valore, totale = 7) {
+    return (valore / totale) * 100;
+}
+
 //inserimento nome 
 let firstName; 
 do{
@@ -13,7 +23,7 @@ let d1;
 do{
     d1 = prompt("qual è la capitale di italia?");
 }while (d1 === null || d1.trim() === "");
-d1 = d1.toLowerCase().trim();
+d1 = sanitize(d1);
 if(d1 === "roma")
     score++;
 else
@@ -24,7 +34,7 @@ let d2;
 do{
     d2 = prompt("di che colore è la fragola?");
 }while (d2 === null || d2.trim() === "");
-d2 = d2.toLowerCase().trim();
+d2 = sanitize(d2);
 if(d2 === "rossa")
     score++;
 else
@@ -35,7 +45,7 @@ let d3;
 do{
     d3 = prompt("quante ruote ha una macchina?");
 }while (d3 === null || d3.trim() === "");
-d3 = d3.toLowerCase().trim();
+d3 = sanitize(d3);
 if(d3 === "4")
     score++;
 else
@@ -46,7 +56,7 @@ let d4;
 do{
     d4 = prompt("come si dice ciao in inglese");
 }while (d4 === null || d4.trim() === "");
-d4 = d4.toLowerCase().trim();
+d4 = sanitize(d4);
 if(d4 === "hello")
     score++;
 else
@@ -57,7 +67,7 @@ let d5;
 do{
     d5  = prompt("quando è scoppiata la prima guerra mondiale? (nel mondo non in italia)");
 }while (d5 === null || d5.trim() === "");
-d5 = d5.toLowerCase().trim();
+d5 = sanitize(d5);
 if(d5 === "1914")
     score++;
 else
@@ -68,7 +78,7 @@ let d6;
 do{
     d6 = prompt("come si chiama il fiore che si gira al sole?");
 }while (d6 === null || d6.trim() === "");
-d6 = d6.toLowerCase().trim();
+d6 = sanitize(d6);
 if(d6 === "girasole")
     score++;
 else
@@ -79,7 +89,7 @@ let d7;
 do{
     d7 = prompt("dove abita francesco francabandera (basta solo la prima parola della città)");
 }while (d7 === null || d7.trim() === "");
-d7 = d7.toLowerCase().trim();
+d7 = sanitize(d7);
 if(d7 === "palo")
     score++;
 else
@@ -89,7 +99,7 @@ else
 alert("il tuo punteggio finale: " +score);
 
 //calcolo e stampa in console della percentuale
-let percentuale = (100 * score)/7;
+let percentuale = calcolaPercentuale(score);
 
 console.log("percentuale risposte giuste: " + percentuale);
 
